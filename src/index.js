@@ -8,9 +8,9 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 const Root = () => (
     <Router>
         <Switch>
-            <Route exact path = {process.env.PUBLIC_URL + '/'} component = {App} />
-            <Route path = {process.env.PUBLIC_URL + '/login'} component = {Login} />
-            <Route path = {process.env.PUBLIC_URL + '/register'} component = {Register} />
+            <Route exact path = {`${process.env.PUBLIC_URL}/`} component = {App} />
+            <Route path = {`${process.env.PUBLIC_URL}/login`}component = {Login} />
+            <Route path = {`${process.env.PUBLIC_URL}/register`} component = {Register} />
         </Switch>
     </Router>
 );

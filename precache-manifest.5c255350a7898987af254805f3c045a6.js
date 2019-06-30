@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "07d8bd3ed6b157513e728994dc86b4e1",
+    "revision": "995fe25638c6393b92ac8882b2a71e72",
     "url": "/slack_clone/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/slack_clone/static/js/2.432d116c.chunk.js"
   },
   {
-    "revision": "c1a9c6fce5dd678801fb",
-    "url": "/slack_clone/static/js/main.27870d95.chunk.js"
+    "revision": "bd9a2ee02917c9e8e8a3",
+    "url": "/slack_clone/static/js/main.3b29b07d.chunk.js"
   },
   {
     "revision": "0dac2c20b37925c8acff",

@@ -1,7 +1,8 @@
 import React from 'react';
 import {Grid, Form, Segment, Header, Button, Message, Icon} from 'semantic-ui-react';
 import {Link} from 'react-router-dom';
-import firebase from '../../Firebase'
+import firebase from '../../Firebase';
+import md5 from 'md5';
 
 class Register extends React.Component{
 
@@ -60,13 +61,26 @@ class Register extends React.Component{
     handleSubmit = (event) => {
         event.preventDefault();
         if (this.isFormValid()){
-            this.setState({loading: true})
+            this.setState({error: '', loading: true});
             firebase
                 .auth()
                 .createUserWithEmailAndPassword(this.state.email, this.state.password)
                 .then(createdUser => {
-                    console.log(createdUser);
-                    this.setState({loading: false});    
+                    console.log(createdUser) ;
+                    const hash = md5(createdUser.user.email);
+                    createdUser.user.updateProfile({
+                        displayName: this.state.username,
+                        photoURL: `http://gravatar.com/avatar/${hash}?d=identicon`
+                    })
+                    .then(() => {
+                        this.setState({loading: false});  
+                        
+                    })
+                    .catch (err => {
+                        console.error(err);
+                        this.setState({error: err, loading: false});
+                    })
+                     
                 })
                 .catch(err => {
                     console.error(err);

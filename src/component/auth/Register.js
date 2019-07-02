@@ -61,7 +61,7 @@ class Register extends React.Component{
 
     handleSubmit = (event) => {
         event.preventDefault();
-        if (this.isFormValid()){
+        if (this.isFormValid(this.state)){
             this.setState({error: '', loading: true});
             firebase
                 .auth()
@@ -155,7 +155,7 @@ class Register extends React.Component{
                         </Message>)
                     )}
                     
-                    <Message>Already a user? <Link to = "Login">Login</Link></Message>
+                    <Message>Already a user? <Link to = "/login">Login</Link></Message>
 
                 </Grid.Column>
 
